@@ -1,0 +1,78 @@
+img{
+    margin-top: auto;
+    width: 50%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-self: center;
+    justify-content: center;
+}
+
+.welcome {
+    border-radius: none;
+    border-style: none;
+    background-color: darkred;
+    margin-top: 100px;
+    font-size: larger;
+    font-family: fantasy;
+    margin-top: 100px;
+    padding: 5px;
+}
+
+.welcomeTwo{
+    border-radius: none;
+    border-style: none;
+    background-color: darkred;
+    margin-top: 100px;
+    font-size: larger;
+    font-family: fantasy;
+    margin-top: 100px;
+    padding: 5px;
+}
+@media (max-width: 767px) {
+    .welcomeTwo{
+        display: none;
+    }
+}
+/* Comeback to this, so i can align text to middle of the page when less than 768 px. */
+@media (max-width: 767px) {
+    .welcome{
+       font-size: x-large;
+       text-align: end;
+       display: flex;
+       justify-content: center;
+       align-self: center;
+    }
+}
+
+.welcome:hover {
+    cursor:none;
+}
+.welcomeTwo:hover{
+    cursor:none;
+}
+
+body{
+    background-color: darkred;
+}
+
+.loginForm{
+    background-color: black;
+    padding: 20px;
+    color: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+form:has(button) {
+    text-align: center;
+}
+
+form > button:hover {
+    color: white;
+}
+
+.form-check-input{
+    align-items: center;
+}
