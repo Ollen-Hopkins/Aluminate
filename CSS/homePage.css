@@ -82,6 +82,30 @@ body{
     height: 30px;
 }
 
+.house-icon{
+    display: flex; 
+    flex-direction: column; 
+    text-align: start;
+}
+
+.search-icon{
+    display: flex; 
+    flex-direction: column; 
+    text-align: start;
+}
+
+
+.plus-icon{
+    flex-direction: column;
+    
+}
+.exit-icon{
+    display: flex; 
+    flex-direction: column; 
+    text-align: start;
+    justify-content: end;
+}
+
 /* text on right side of screen */
 h1{
     font-size: medium;
@@ -154,5 +178,37 @@ h4:hover{
         justify-content: center;
         text-align: center;
         margin-left: auto;
+        margin-right: auto;
+    }
+    .house-icon{
+        float: left;
+        margin-right: 10px;
+        margin-left: auto;
+        text-align: center;
+    }
+    .search-icon{
+        float: left;        
+        margin-right: 10px;
+        margin-left: auto;
+        text-align: center;
+    }
+    .plus-icon{
+        float: left;
+        margin-right: 10px;
+        margin-left: auto;
+        text-align: center;
+    }
+    .exit-icon{
+        float: right;
+        margin-right: 10px;
+        margin-left: auto;
+        text-align: center;
+    }
+    .navIcons{
+        border-style: solid;
+        border:rgb(0, 0, 0);
+    }
+    h4{
+        text-align: center;
     }
 }
