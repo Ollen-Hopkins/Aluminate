@@ -27,16 +27,32 @@
         <!-- header end -->
         <!-- main content -->
         <div class="row">
-            <div class="col-lg-3">
-               <a href="#" class="btn"><img src="assets/images/homeIcon.png" alt="house icon" class="homeIcon"> Home </a>
+            <div class="col-lg-3 sticky-top navIcons">
+               <a href="#" class="btn" style="display: flex; flex-direction: column; text-align: start; " ><img src="assets/images/homeIcon.png" alt="house-icon" class="homeIcon"> Home </a> 
+               <a href="#" class="btn" style="display: flex; flex-direction: column; text-align: start;"><img src="assets/images/search.png" alt="search-icon" class="homeIcon"> Explore </a> 
+               <a href="createPost.html" class="btn" style="flex-direction: column;"><img src="assets/images/create.png" alt="plus-icon" class="homeIcon"> Create Post </a> 
             </div>
-            <div class="col-lg-6 parent">
-                <img src="assets/images/blackBackground.jpg" alt="black Background" id="mainContentBackgroundImage" class="imageTwo" />
-                <!-- Options Menu will eventually display a tooltip-->
-                <img src="assets/images/userProfilePhoto.png" alt="Wizard casting meteor spell" class="imageOne" />
-                <h1>Wu_Kong</h1>
-                <img src="assets/images/optionsMenu.png" alt="3 vertical dots" class="imageThree" />
-                <video src="assets/videos/LiuKang.mp4" autoplay controls muted></video>
+            <div class="col-lg-6 mainContent">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/images/userProfilePhoto.png" alt="Wizard casting meteor spell" class="imageOne" style="margin: 0 8px 0 0;">
+                        <h1>Wu_Kong</h1>
+                        <img src="assets/images/optionsMenu.png" alt="3 vertical dots" class="imageThree" style="margin: 0; margin-left: auto;" />
+                    </div>
+                    <div class="card-body">
+                        <video src="assets/videos/LiuKang.mp4" autoplay controls muted></video>
+                    </div>
+                    <div class="card-title">
+                        <button><img src="assets/images/heart.png" alt="heart"></button>
+                        <button><img src="assets/images/comment-new.jpg" alt="comment icon"></button>
+                    </div>
+                    <div class="card-footer">
+                        <label style="color: whitesmoke">Wu_Kong</label>
+                        <div class="card-text">lmao break your bones, then Friendship!</div>
+                        <label style="color: whitesmoke">the_Greatest_troll</label>
+                        <div class="card-text">aw yes, the iconic bicycle kick fatality! </div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <h2>Recent Events</h2>
