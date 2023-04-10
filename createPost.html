@@ -10,7 +10,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
         crossorigin="anonymous"
     >
-    <link rel="stylesheet" href="CSS/homePage.css">
+    <link rel="stylesheet" href="CSS/createPost.css">
     
     <title>Aluminate Home Page</title>
 </head>
@@ -34,7 +34,7 @@
         <!-- main content -->
         <div class="row">
             <div class="col-lg-3 navIcons">
-               <a href="#" class="btn house-icon"  ><img src="assets/images/homeIcon.png" alt="house-icon" class="homeIcon"> Home </a> 
+               <a href="homePage.html" class="btn house-icon"  ><img src="assets/images/homeIcon.png" alt="house-icon" class="homeIcon"> Home </a> 
                <a href="#" class="btn search-icon" ><img src="assets/images/search.png" alt="search-icon" class="homeIcon"> Explore </a> 
                <a href="createPost.html" class="btn plus-icon" ><img src="assets/images/create.png" alt="plus-icon" class="homeIcon" style="margin-left: 20px"> Create Post </a> 
                <a href="loginPage.html" class="btn exit-icon" ><img src="assets/images/exitIcon.png" alt="exit-icon" class="homeIcon"> Logout </a> 
@@ -42,22 +42,15 @@
             <div class="col-lg-6 mainContent">
                 <div class="card">
                     <div class="card-header">
-                        <img src="assets/images/userProfilePhoto.png" alt="Wizard casting meteor spell" class="imageOne" style="margin: 0 8px 0 0;">
-                        <h1>Wu_Kong</h1>
-                        <img src="assets/images/optionsMenu.png" alt="3 vertical dots" class="imageThree" style="margin: 0; margin-left: auto;" />
+                        <img src="assets/images/Cancel.webp" alt="Wizard casting meteor spell" class="imageOne" style="margin: 0 8px 0 0;">
+                        <h1 style="margin-left: auto;">Create Post</h1>
+                        <img src="assets/images/greenCheck.webp" alt="3 vertical dots" class="imageThree" style="width: 60px; margin: 0; margin-left: auto;" />
                     </div>
                     <div class="card-body">
-                        <video src="assets/videos/LiuKang.mp4" autoplay controls muted></video>
+                        <img src="assets/images/White_full.png" alt="white background within create Post">
                     </div>
-                    <div class="card-title">
-                        <button><img src="assets/images/heart.png" alt="heart"></button>
-                        <button><img src="assets/images/comment-new.jpg" alt="comment icon"></button>
-                    </div>
-                    <div class="card-footer">
-                        <label style="color: whitesmoke">Wu_Kong</label>
-                        <div class="card-text">lmao break your bones, then Friendship!</div>
-                        <label style="color: whitesmoke">the_Greatest_troll</label>
-                        <div class="card-text">aw yes, the iconic bicycle kick fatality! </div>
+                    <div class="card-title mt-0">
+                        <input class="form-control chooseFile" type="file" id="formFile">
                     </div>
                 </div>
             </div>
