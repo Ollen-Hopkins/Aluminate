@@ -28,7 +28,7 @@
     <section class="container">
         <div class="row mt-3">
             <div class="col">
-                <form class="loginForm mt-sm-5 mb-5">
+                <form class="loginForm mt-sm-5 mb-5" id="login-form">
                     <div class="mb-3">
                         <label for="user" class="form-label">User Name:</label>
                         <input type="text" class="form-control" id="user" placeholder="Username" required>
@@ -38,8 +38,8 @@
                         <input type="password" class="form-control" id="password" placeholder="Password" required>
                     </div>
                     <div class="registerAndLoginButton mt-5">
-                       <a href="homePage.html" class="btn form-control bg-info"><input type="submit" value="Login" class="form-control"></a>
-                        <a href="registerPage.html" class="btn bg-danger"> Register </a>
+                        <button type="submit" class="btn form-control bg-info" onclick="userDataAPI.loginData()">Login</button>
+                        <button type="submit" class="btn form-control bg-info">Register</button>
                     </div>
                 </form>
             </div>
