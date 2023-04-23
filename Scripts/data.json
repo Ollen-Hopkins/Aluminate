@@ -1,0 +1,20 @@
+{
+    "1": {
+      "name": "Monky King",
+      "age": "32",
+      "email": "WuKing@gmail.com",
+      "username": "Wukong_is_king"
+    },
+    "2": {
+      "name": "Jane",
+      "age": "15",
+      "email": "jane@aol.com",
+      "username": "jane_doe"
+    },
+    "3": {
+      "name": "Smith",
+      "age": "28",
+      "email": "ForgeGod@yahoo.com",
+      "username": "black_smith"
+    }
+  }
