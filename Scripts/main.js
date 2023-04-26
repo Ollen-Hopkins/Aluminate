@@ -92,6 +92,12 @@ function register() {
 function loginForm() {
   const username = document.getElementById("user").value;
   const password = document.getElementById("password").value;
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    loginForm();
+  });
 
   fetch(`${URL}${EXT}`)
     .then((res) => res.json())
@@ -100,12 +106,16 @@ function loginForm() {
         (user) => user.username === username
       );
 
-      if (!user) {
-        alert("Invalid username");
+
+      if (user) {
+        setTimeout(() => {
+          window.location.href = "../homepage.html";
+        }, 1000);
       } else if (password.length < 10) {
-        alert("password must be at least 10 characters long.");
+        alert("Invalid username or password");
       } else {
-        window.location.href = "../homePage.html";
+        readRecord(data);
+        console.log(myData);
       }
     });
 }
@@ -125,7 +135,7 @@ function loginForm() {
     .then((data) => console.log(data));
 }
 
-function handleImageUpload() {
+function imageUpload() {
   const input = document.getElementById("formFile");
   const file = input.files[0];
   // converts file to a URL
