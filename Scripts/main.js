@@ -80,44 +80,43 @@ function register() {
     alert("password must be at least 10 characters long.");
   } else {
     createRecord(data);
+    localStorage.setItem("username", username);
     setTimeout(() => {
-      window.location.href = "../homePage.html";
+      window.location.href = "homepage.html";
+      setUsername();
     }, 1000);
   }
-
+  
   console.log(myData);
 }
 
-// 
+
 function loginForm() {
   const username = document.getElementById("user").value;
-  const password = document.getElementById("password").value;
   const loginForm = document.getElementById("loginForm");
 
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    loginForm();
-  });
-
-  fetch(`${URL}${EXT}`)
+    
+    fetch(`${URL}${EXT}`)
     .then((res) => res.json())
     .then((data) => {
       const user = Object.values(data).find(
         (user) => user.username === username
       );
-
-
       if (user) {
         setTimeout(() => {
-          window.location.href = "../homepage.html";
+          window.location.href = "homepage.html";
+          setUsername();
         }, 1000);
-      } else if (password.length < 10) {
-        alert("Invalid username or password");
       } else {
-        readRecord(data);
-        console.log(myData);
+        alert("Invalid username or password");
       }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
     });
+  })
 }
 
 
@@ -148,4 +147,19 @@ function imageUpload() {
       const img = document.getElementById("newImage");
       img.src = imageUrl;
   }
+}
+
+// Homepage Section
+function setUsername() {
+  const user = localStorage.getItem("username");
+  const usernameElement = document.getElementById("currentUsername");
+  if (user) {
+    usernameElement.innerHTML = user;
+  } else {
+    usernameElement.innerHTML = "Guest";
+  }
+}
+
+window.onload = function (){
+  setUsername();
 }
