@@ -43,21 +43,37 @@
                 <div class="card">
                     <div class="card-header">
                         <img src="assets/images/userProfilePhoto.png" alt="Wizard casting meteor spell" class="imageOne" style="margin: 0 8px 0 0;">
-                        <h1 id="currentUsername"></h1>
+                        <h1 class="currentUsername"></h1>
                         <img src="assets/images/optionsMenu.png" alt="3 vertical dots" class="imageThree" style="margin: 0; margin-left: auto;" />
                     </div>
-                    <div class="card-body">
-                        <video src="assets/videos/LiuKang.mp4" autoplay controls muted></video>
+                    <div class="card-body" id="card-body">
+                        <video src="assets/videos/LiuKang.mp4" autoplay controls muted id="video"></video>
                     </div>
                     <div class="card-title">
                         <button><img src="assets/images/heart.png" alt="heart"></button>
                         <button><img src="assets/images/comment-new.jpg" alt="comment icon"></button>
                     </div>
                     <div class="card-footer">
-                        <label style="color: whitesmoke">Wu_Kong</label>
-                        <div class="card-text">lmao break your bones, then Friendship!</div>
-                        <label style="color: whitesmoke">the_Greatest_troll</label>
-                        <div class="card-text">aw yes, the iconic bicycle kick fatality! </div>
+                        <h1 style="color: whitesmoke" class="currentUsername">Wu_Kong</h1>
+                        <div class="card-text"> 
+                            <input 
+                                type="text" 
+                                placeholder="click to leave a comment: " 
+                                id="newUserComment" 
+                                class="bg-black border-0 col-12" 
+                                style="color: whitesmoke;"
+                            >
+                        </div>
+                        <h1 style="color: whitesmoke">the_Greatest_troll</h1>
+                        <div class="card-text"> 
+                            <input 
+                                type="text" 
+                                placeholder="click to leave a comment: " 
+                                id="newComment" 
+                                class="bg-black border-0 col-12" 
+                                style="color: white;"
+                            >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,5 +87,6 @@
         <!-- main content end-->
     </div>
     <script src="Scripts/main.js"></script>
+    <script src="Scripts/script.js"></script>
 </body>
 </html>

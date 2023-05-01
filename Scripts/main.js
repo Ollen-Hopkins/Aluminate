@@ -86,48 +86,47 @@ function register() {
       setUsername();
     }, 1000);
   }
-  
+
   console.log(myData);
 }
 
-
 function loginForm() {
   const username = document.getElementById("user").value;
-  const loginForm = document.getElementById("loginForm");
+  const loginForm = document.getElementById("login-form");
 
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    
+
     fetch(`${URL}${EXT}`)
-    .then((res) => res.json())
-    .then((data) => {
-      const user = Object.values(data).find(
-        (user) => user.username === username
-      );
-      if (user) {
-        setTimeout(() => {
-          window.location.href = "homepage.html";
-          setUsername();
-        }, 1000);
-      } else {
-        alert("Invalid username or password");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-  })
+      .then((res) => res.json())
+      .then((data) => {
+        const user = Object.values(data).find(
+          (user) => user.username === username
+        );
+        if (user) {
+          setTimeout(() => {
+            window.location.href = "homepage.html";
+            setUsername();
+          }, 1000);
+        } else {
+          alert("Invalid username or password");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  });
 }
 
-
 // Post Section
- function createPost(imageUrl) {
+function createPost(imageUrl) {
   let myData = JSON.parse(localStorage.getItem("myData")) || {};
   myData["new_post"] = imageUrl;
   localStorage.setItem("myData", JSON.stringify(myData));
   // Send updated myData object to server
   fetch(`${URL}${EXT}`, {
     method: "PUT",
+
     body: JSON.stringify(myData),
   })
     .then((res) => res.json())
@@ -141,18 +140,33 @@ function imageUpload() {
   const reader = new FileReader();
   reader.readAsDataURL(file);
 
-  reader.onloadend = function() {
-      const imageUrl = reader.result;
-      createPost(imageUrl);
-      const img = document.getElementById("newImage");
-      img.src = imageUrl;
-  }
+  reader.onloadend = function () {
+    const imageUrl = reader.result;
+    createPost(imageUrl);
+    const img = document.getElementById("newImage");
+    img.src = imageUrl;
+
+  };
 }
+
+myData = JSON.parse(localStorage.getItem("myData"));
+let imageURL = myData.new_post;
+
+const newImage = document.createElement("img");
+newImage.src = imageURL;
+newImage.classList.add('new-image');
+const cardBody = document.querySelector("#card-body");
+cardBody.appendChild(newImage);
+
+const currentVideo = document.querySelector("#video");
+currentVideo.style.display = "none";
+
+
 
 // Homepage Section
 function setUsername() {
   const user = localStorage.getItem("username");
-  const usernameElement = document.getElementById("currentUsername");
+  const usernameElement = document.querySelector(".currentUsername");
   if (user) {
     usernameElement.innerHTML = user;
   } else {
@@ -160,6 +174,34 @@ function setUsername() {
   }
 }
 
-window.onload = function (){
+window.onload = function () {
   setUsername();
+};
+
+//comment Section
+function comment() {
+  const username = localStorage.getItem("username");
+  const newComment = document.getElementById("newUsercomment").value;
+
+  if (myData[username]) {
+    myData[username].comment = newComment;
+    localStorage.setItem("myData", JSON.stringify(myData));
+    fetch(`${URL}${EXT}`, {
+      method: "put",
+      body: JSON.stringify("myData"),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  } else {
+    alert("Username not found");
+  }
+}
+
+document.getElementById("commentButton").addEventListener("click", function () {
+  comment();
+});
+
+function deletePost () {
+  let deleteButton = document.querySelector('.imageThree');
+  
 }

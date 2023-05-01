@@ -20,6 +20,10 @@ video{
     width: 100%;
     height: fit-content;
 }
+.new-image{
+    width: 100%;
+    height: 400px;
+}
 
 img{
     margin-top: auto;
@@ -208,4 +212,38 @@ h4:hover{
     h4{
         text-align: center;
     }
+    #newUserComment{
+        margin: auto; 
+        width: 650px;
+    }
+    #newComment{
+        margin: auto; 
+        width: 650px;
+    }
+}
+
+@media (max-width: 768px){
+    #newUserComment{
+        margin: auto; 
+        width: 475px;
+    }
+    #newComment{
+        margin: auto; 
+        width: 475px;
+    }
+}
+
+@media (max-width: 576px){
+    #newUserComment{
+        margin: auto; 
+        width: 425px;
+    }
+    #newComment{
+        margin: auto; 
+        width: 425px;
+    }
+}
+i {
+    display: flex;
+    margin-left: auto;
 }
