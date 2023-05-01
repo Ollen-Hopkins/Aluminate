@@ -197,11 +197,25 @@ function comment() {
   }
 }
 
-document.getElementById("commentButton").addEventListener("click", function () {
-  comment();
-});
+
 
 function deletePost () {
   let deleteButton = document.querySelector('.imageThree');
-  
+  deleteButton.addEventListener('click', () => {
+    let card = deleteButton.closest('.card');
+    card.remove();
+
+    let myData = JSON.parse(localStorage.getItem('myData'));
+    delete myData.new_post;
+    localStorage.setItem('myData', JSON.stringify(myData));
+
+    fetch(`${URL}${EXT}`, {
+      method: 'DELETE'
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+  });
+  console.log(deletePost());
+  console.log(deleteButton);
+  console.log(card);
 }
